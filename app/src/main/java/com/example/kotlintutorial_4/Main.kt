@@ -1,11 +1,8 @@
 import com.example.kotlintutorial_4.Player
+import com.example.kotlintutorial_4.Weapon
 
 fun main(args: Array<String>){
     val tim = Player("Tim")
-//    println(tim.name)
-////    println(tim.lives)
-////    println(tim.level)
-////    println(tim.score)
     tim.show()
 
     val louise = Player("Louise", 5)
@@ -15,4 +12,21 @@ fun main(args: Array<String>){
     val one2wach = Player("Ace", 2, 5, 1000)
     gr8.show()
     one2wach.show()
+    println(one2wach.weapon.name.toUpperCase())
+    println(one2wach.weapon.damageInfLicted)
+
+    val axe = Weapon("Axe", 12)
+    gr8.weapon = axe
+    println(gr8.weapon.name)
+    println(axe.name)
+
+    axe.damageInfLicted = 24
+    println(axe.damageInfLicted)
+    println(gr8.weapon.damageInfLicted)
+
+    tim.weapon = Weapon("Sword", 10)
+    println(tim.weapon.name)
+
+    tim.weapon = Weapon("Spear", 14)
+    println(tim.weapon.name)
 }
