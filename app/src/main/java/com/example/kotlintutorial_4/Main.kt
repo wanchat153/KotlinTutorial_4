@@ -2,21 +2,15 @@ import com.example.kotlintutorial_4.*
 
 fun main(args: Array<String>){
 
-//    val uglyTroll = Troll("Ugly Troll")
-//    println(uglyTroll)
-//    uglyTroll.takeDamage(8)
-//    println(uglyTroll)
-//
-//    val vlad = Vampyre("Vlad")
-//    println(vlad)
-//    vlad.takeDamage(8)
-//    println(vlad)
-//
     for (i in 1 .. 10){
         val dracula = VampyreKing("Dracula")
         println(dracula)
-        while (dracula.lives > 0) {
+
+        dracula.lives = 0
+
+        do {
             if (dracula.dodges()){
+                dracula.lives += 1
                 continue;
             }
             if (dracula.runAway()){
@@ -25,7 +19,7 @@ fun main(args: Array<String>){
             }else{
                 dracula.takeDamage(80)
             }
-        }
+        }while (dracula.lives > 0)
         println("-------------------------")
     }
 
