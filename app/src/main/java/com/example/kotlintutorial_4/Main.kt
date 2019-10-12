@@ -1,3 +1,5 @@
+import com.example.kotlintutorial_4.Loot
+import com.example.kotlintutorial_4.LootType
 import com.example.kotlintutorial_4.Player
 import com.example.kotlintutorial_4.Weapon
 
@@ -34,4 +36,9 @@ fun main(args: Array<String>){
     tim.weapon = Weapon("Spear", 14)
 //    println(tim.weapon.name)
     tim.show()
+
+    val redPotion = Loot("Red Potion", LootType.POTION, 7.50)
+    tim.inventory.add(redPotion)
+    tim.showInventory()
+    println(tim.toString())
 }
