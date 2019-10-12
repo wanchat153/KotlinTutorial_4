@@ -27,10 +27,10 @@ class Player (val name: String, var level: Int = 1, var lives: Int = 3, var scor
         inventory.add(item)
     }
 
-    fun dropLoot(name: String): Boolean{
-        println("$name will be dropped")
-        return inventory.removeIf { it.name == name }
-    }
+//    fun dropLoot(name: String): Boolean{
+//        println("$name will be dropped")
+//        return inventory.removeIf { it.name == name }
+//    }
 
     fun dropLoot(item: Loot): Boolean {
         return if (inventory.contains(item)) {
@@ -42,10 +42,14 @@ class Player (val name: String, var level: Int = 1, var lives: Int = 3, var scor
     }
 
     fun showInventory(){
+        var total = 0.0
         println("$name's Inventory")
         for (item in inventory){
             println(item)
+            total += item.value
         }
+        println("========================")
+        println("Total score is: $total")
         println("========================")
     }
 }
